@@ -19,7 +19,6 @@ export class ContactComponent {
   router = inject(Router);
 
   submit(contactForm: NgForm) {
-    this.isSubmitted = false;
     if (contactForm.invalid) return;
     const contact:IContact = {
       name:contactForm.value.name,
