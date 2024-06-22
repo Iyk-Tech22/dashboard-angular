@@ -34,6 +34,7 @@ export class ContactComponent implements OnInit {
   }
 
   submit(contactForm: NgForm) {
+    console.log(contactForm);
     if (contactForm.invalid) return;
     const contact:IContact = {
       name:contactForm.value.name,
@@ -43,7 +44,6 @@ export class ContactComponent implements OnInit {
       latitude:this.lat,
       longitude:this.lng,
     }
-    
     this.contactsService.addContact(contact);
     this.router.navigate(["/dashboard"]);
   }
