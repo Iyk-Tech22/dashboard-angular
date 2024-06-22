@@ -40,8 +40,8 @@ export class ContactComponent implements OnInit {
       email:contactForm.value.email,
       phone:contactForm.value.phone,
       address:contactForm.value.address,
-      latitude:contactForm.value.latitude,
-      longitude:contactForm.value.longitude,
+      latitude:this.lat,
+      longitude:this.lng,
     }
     
     this.contactsService.addContact(contact);
