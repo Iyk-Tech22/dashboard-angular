@@ -30,5 +30,6 @@ export class ContactComponent {
     }
     
     this.contactsService.addContact(contact);
+    this.router.navigate(["/dashboard"]);
   }
 }
