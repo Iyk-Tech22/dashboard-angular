@@ -30,8 +30,6 @@ export class ContactComponent {
       longitude:contactForm.value.longitude,
     }
     
-    console.log(contactForm.value.longitude);
     this.contactsService.addContact(contact);
-    // this.router.navigate(["/dashboard"]);
   }
 }
