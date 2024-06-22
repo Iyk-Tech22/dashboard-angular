@@ -5,19 +5,19 @@
     </h2>
   </div>
   <form #contactForm="ngForm" (ngSubmit)="submit(contactForm)" class="mx-auto mt-4 max-w-xl sm:mt-8">
-    <div class="bg-red-500 text-white p-3 font-medium rounded-md mb-10" *ngIf="isSubmitted && contactForm.invalid">
+    <div class="bg-red-500 text-white p-3 font-medium rounded-md mb-3" *ngIf="isSubmitted && contactForm.invalid">
       <span  *ngIf="contactForm.controls['phone'].hasError('pattern')">Invalid phone number</span>
       <span *ngIf="contactForm.controls['email'].hasError('email') && !contactForm.controls['phone'].hasError('pattern')">Invalid Email</span>
       <span *ngIf="contactForm.invalid && (!contactForm.controls['phone'].hasError('pattern') && !contactForm.controls['email'].hasError('email'))">All field is required...</span>
     </div>
-    <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+    <div class="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
       <div class="sm:col-span-2">
         <label
           for="name"
           class="block text-sm font-semibold leading-6 text-gray-900"
           >Name</label
         >
-        <div class="mt-2.5">
+        <div class="mt-1.5">
           <input
             type="text"
             name="name"
@@ -36,7 +36,7 @@
           class="block text-sm font-semibold leading-6 text-gray-900"
           >Phone</label
         >
-        <div class="mt-2.5">
+        <div class="mt-1.5">
           <input
             type="text"
             name="phone"
@@ -56,7 +56,7 @@
           class="block text-sm font-semibold leading-6 text-gray-900"
           >Email</label
         >
-        <div class="mt-2.5">
+        <div class="mt-1.5">
           <input
             type="email"
             name="email"
@@ -76,7 +76,7 @@
           class="block text-sm font-semibold leading-6 text-gray-900"
           >Address</label
         >
-        <div class="mt-2.5">
+        <div class="mt-1.5">
           <input
             type="text"
             name="address"
@@ -97,7 +97,7 @@
           class="block text-sm font-semibold leading-6 text-gray-900"
           >Latitude</label
         >
-        <div class="mt-2.5">
+        <div class="mt-1.5">
           <input
             type="text"
             name="latitude"
@@ -118,7 +118,7 @@
           class="block text-sm font-semibold leading-6 text-gray-900"
           >Longitude</label
         >
-        <div class="mt-2.5">
+        <div class="mt-1.5">
           <input
             type="text"
             name="Longitude"
@@ -134,7 +134,7 @@
         </div>
       </div>
     </div>
-    <div class="mt-10">
+    <div class="mt-5">
       <button
         (click)="isSubmitted=true"
         class="block w-full rounded-md bg-[#22252b] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22252b]"
