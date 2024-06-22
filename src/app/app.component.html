@@ -1,0 +1,25 @@
+<div class="flex min-h-screen">
+  <nav class="max-h-full md:w-[20%] bg-[#22252b]">
+    <ul class="flex flex-col  text-white">
+      <li class="w-full flex justify-center border-b border-solid border-gray-300">
+        <a 
+          class="w-full h-full flex items-center space-x-2 p-4 hover:bg-slate-400"
+          routerLink="/dashboard">
+          <img src="assets/icons/home.svg" class="w-4 h-4">
+          <span class="hidden md:block">Dashboard</span>
+        </a> 
+      </li>
+      <li class="w-full text-center border-b border-solid border-gray-300">
+        <a
+          class="w-full h-full flex items-center space-x-2 p-4 hover:bg-slate-400"
+          routerLink="/contact">
+          <img src="assets/icons/add.svg" class="w-4 h-4">
+          <span class="hidden md:block">Contact</span>
+        </a> 
+      </li>
+    </ul>
+  </nav>
+  <div class="w-full max-h-full bg-white">
+    <router-outlet/>
+  </div>
+</div>
