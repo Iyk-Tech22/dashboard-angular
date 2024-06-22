@@ -34,10 +34,7 @@ export class ContactComponent implements OnInit {
   }
 
   submit(contactForm: NgForm) {
-    if (contactForm.invalid) {
-      contactForm.reset();
-      return;
-    } 
+    if (contactForm.invalid) return;
     const contact:IContact = {
       name:contactForm.value.name,
       email:contactForm.value.email,
