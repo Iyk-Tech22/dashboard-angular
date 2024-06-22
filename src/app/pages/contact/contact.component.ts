@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ContactsService } from '../../services/contacts.service';
 import { Router } from '@angular/router';
@@ -12,11 +12,26 @@ import { IContact } from '../../interfaces/contact.interface';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   isSubmitted = false;
+  lat = 0;
+  lng = 0;
 
   contactsService = inject(ContactsService);
   router = inject(Router);
+
+  ngOnInit(): void {
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          this.lat = position.coords.latitude;
+          this.lng = position.coords.longitude;
+        });
+
+      } else {
+        alert("geolocation is not available");
+      }
+
+  }
 
   submit(contactForm: NgForm) {
     if (contactForm.invalid) return;

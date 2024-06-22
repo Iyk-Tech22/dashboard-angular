@@ -76,6 +76,8 @@
             name="address"
             id="address"
             required
+            minlength="1"
+            maxlength="5"
             #address="ngModel"
             ngModel
             autocomplete="address"
@@ -96,6 +98,8 @@
             id="latitude"
             required
             ngModel
+            disabled
+            [(ngModel)]="lat"
             #latitude="ngModel"
             autocomplete="latitude"
             class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring[#22252b] sm:text-sm sm:leading-6"
@@ -115,6 +119,8 @@
             id="Longitude"
             ngModel
             required
+            disabled
+            [(ngModel)]="lng"
             #longitude="ngModel"
             autocomplete="Longitude"
             class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[] sm:text-sm sm:leading-6"
